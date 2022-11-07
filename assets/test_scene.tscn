@@ -69,3 +69,7 @@ virtual_camera_2 = NodePath("../VirtualCamera2")
 
 [node name="CollisionShape" type="CollisionShape2D" parent="AreaTrigger"]
 shape = SubResource("RectangleShape2D_1n763")
+
+[node name="VirtualCamera2D" type="Node2D" parent="."]
+script = ExtResource("1_twc2v")
+_follow_node = NodePath("")
