@@ -1,0 +1,38 @@
+[gd_scene load_steps=6 format=3 uid="uid://ou8351ptxo8b"]
+
+[ext_resource type="Script" path="res://addons/cinematic_camera_2d/scripts/camera_data_2d.gd" id="1_twc2v"]
+[ext_resource type="Script" path="res://addons/cinematic_camera_2d/scripts/cinematic_camera_2d.gd" id="2_rd426"]
+[ext_resource type="Script" path="res://assets/test_player.gd" id="3_3etyj"]
+[ext_resource type="Texture2D" uid="uid://dy8dhdqs10v8t" path="res://icon.svg" id="4_3yo8t"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_41qpf"]
+size = Vector2(112, 112)
+
+[node name="TestScene" type="Node2D"]
+
+[node name="CameraData" type="Node2D" parent="."]
+script = ExtResource("1_twc2v")
+_follow_node = NodePath("../TestPlayer")
+smoothing_speed = 8.0
+limit_left = -750
+limit_top = -500
+limit_right = 750
+limit_bottom = 500
+
+[node name="CinematicCamera" type="Camera2D" parent="."]
+current = true
+zoom = Vector2(1, 1)
+process_callback = 0
+position_smoothing_enabled = true
+position_smoothing_speed = 8.0
+script = ExtResource("2_rd426")
+_camera_data = NodePath("../CameraData")
+
+[node name="TestPlayer" type="CharacterBody2D" parent="."]
+script = ExtResource("3_3etyj")
+
+[node name="CollisionShape" type="CollisionShape2D" parent="TestPlayer"]
+shape = SubResource("RectangleShape2D_41qpf")
+
+[node name="Sprite" type="Sprite2D" parent="TestPlayer"]
+texture = ExtResource("4_3yo8t")
