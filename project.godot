@@ -9,6 +9,11 @@
 config_version=5
 
 _global_script_classes=[{
+"base": "Area2D",
+"class": &"AreaTrigger",
+"language": &"GDScript",
+"path": "res://assets/area_trigger.gd"
+}, {
 "base": "Camera2D",
 "class": &"CinematicCamera2D",
 "language": &"GDScript",
@@ -25,6 +30,7 @@ _global_script_classes=[{
 "path": "res://addons/cinematic_camera_2d/scripts/virtual_camera_2d.gd"
 }]
 _global_script_class_icons={
+"AreaTrigger": "",
 "CinematicCamera2D": "",
 "TestPlayer": "",
 "VirtualCamera2D": ""
@@ -35,11 +41,6 @@ _global_script_class_icons={
 config/name="Cinematic Camera 2D"
 config/features=PackedStringArray("4.0", "Forward Plus")
 config/icon="res://icon.svg"
-
-[display]
-
-window/size/viewport_width=800
-window/size/viewport_height=450
 
 [editor_plugins]
 

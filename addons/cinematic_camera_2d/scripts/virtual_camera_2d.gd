@@ -96,7 +96,7 @@ func update_position(camera: Node2D) -> void:
 	else:
 		camera.global_position = global_position
 	# Make came stay within its limits.
-	var bounds = get_viewport_rect().size * 0.5
+	var bounds = get_viewport_rect().size * 0.5 * Vector2(1 / zoom.x, 1 / zoom.y)
 	var min_x = global_position.x + limit_left + bounds.x - offset.x
 	var min_y = global_position.y + limit_top + bounds.y - offset.y
 	var max_x = global_position.x + limit_right - bounds.x - offset.x

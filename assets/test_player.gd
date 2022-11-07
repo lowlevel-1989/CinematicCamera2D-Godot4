@@ -2,7 +2,7 @@ class_name TestPlayer
 extends CharacterBody2D
 
 
-@export var speed: float = 200.0
+@export var speed: float = 300.0
 
 
 func _process(_delta: float) -> void:

@@ -1,34 +1,52 @@
-[gd_scene load_steps=6 format=3 uid="uid://byp41u721keq"]
+[gd_scene load_steps=8 format=3 uid="uid://byp41u721keq"]
 
 [ext_resource type="Script" path="res://addons/cinematic_camera_2d/scripts/virtual_camera_2d.gd" id="1_twc2v"]
 [ext_resource type="Script" path="res://addons/cinematic_camera_2d/scripts/cinematic_camera_2d.gd" id="2_rd426"]
 [ext_resource type="Script" path="res://assets/test_player.gd" id="3_3etyj"]
 [ext_resource type="Texture2D" uid="uid://dy8dhdqs10v8t" path="res://icon.svg" id="4_3yo8t"]
+[ext_resource type="Script" path="res://assets/area_trigger.gd" id="5_obird"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_41qpf"]
 size = Vector2(112, 112)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1n763"]
+size = Vector2(16, 992)
+
 [node name="TestScene" type="Node2D"]
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Terrain" type="Sprite2D" parent="."]
 position = Vector2(3.05176e-05, 3.05176e-05)
+scale = Vector2(11.625, 7.75)
+texture = ExtResource("4_3yo8t")
+
+[node name="Terrain2" type="Sprite2D" parent="."]
+position = Vector2(1488, 0)
 scale = Vector2(11.625, 7.75)
 texture = ExtResource("4_3yo8t")
 
 [node name="VirtualCamera" type="Node2D" parent="."]
 script = ExtResource("1_twc2v")
 _follow_node = NodePath("../TestPlayer")
-smoothing_speed = 8.0
-limit_left = -750
-limit_top = -500
-limit_right = 750
-limit_bottom = 500
+limit_left = -744
+limit_top = -496
+limit_right = 896
+limit_bottom = 496
+
+[node name="VirtualCamera2" type="Node2D" parent="."]
+position = Vector2(1488, 0)
+script = ExtResource("1_twc2v")
+_follow_node = NodePath("../TestPlayer")
+offset = Vector2(0, -24)
+zoom = Vector2(1.5, 1.5)
+limit_left = -912
+limit_top = -496
+limit_right = 744
+limit_bottom = 496
 
 [node name="CinematicCamera" type="Camera2D" parent="."]
 current = true
 process_callback = 0
 position_smoothing_enabled = true
-position_smoothing_speed = 8.0
 script = ExtResource("2_rd426")
 _virtual_camera = NodePath("../VirtualCamera")
 
@@ -42,4 +60,12 @@ shape = SubResource("RectangleShape2D_41qpf")
 [node name="Sprite" type="Sprite2D" parent="TestPlayer"]
 texture = ExtResource("4_3yo8t")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+[node name="AreaTrigger" type="Area2D" parent="."]
+position = Vector2(744, 0)
+script = ExtResource("5_obird")
+cinematic_camera = NodePath("../CinematicCamera")
+virtual_camera_1 = NodePath("../VirtualCamera")
+virtual_camera_2 = NodePath("../VirtualCamera2")
+
+[node name="CollisionShape" type="CollisionShape2D" parent="AreaTrigger"]
+shape = SubResource("RectangleShape2D_1n763")
