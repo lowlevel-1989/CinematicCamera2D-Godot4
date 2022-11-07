@@ -9,11 +9,6 @@
 config_version=5
 
 _global_script_classes=[{
-"base": "Node2D",
-"class": &"CameraData2D",
-"language": &"GDScript",
-"path": "res://addons/cinematic_camera_2d/scripts/camera_data_2d.gd"
-}, {
 "base": "Camera2D",
 "class": &"CinematicCamera2D",
 "language": &"GDScript",
@@ -23,11 +18,16 @@ _global_script_classes=[{
 "class": &"TestPlayer",
 "language": &"GDScript",
 "path": "res://assets/test_player.gd"
+}, {
+"base": "Node2D",
+"class": &"VirtualCamera2D",
+"language": &"GDScript",
+"path": "res://addons/cinematic_camera_2d/scripts/virtual_camera_2d.gd"
 }]
 _global_script_class_icons={
-"CameraData2D": "",
 "CinematicCamera2D": "",
-"TestPlayer": ""
+"TestPlayer": "",
+"VirtualCamera2D": ""
 }
 
 [application]
@@ -35,6 +35,11 @@ _global_script_class_icons={
 config/name="Cinematic Camera 2D"
 config/features=PackedStringArray("4.0", "Forward Plus")
 config/icon="res://icon.svg"
+
+[display]
+
+window/size/viewport_width=800
+window/size/viewport_height=450
 
 [editor_plugins]
 
