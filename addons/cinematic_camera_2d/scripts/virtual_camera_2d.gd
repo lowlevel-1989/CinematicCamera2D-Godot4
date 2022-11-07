@@ -3,6 +3,9 @@ class_name VirtualCamera2D
 extends Node2D
 
 
+@icon("res://addons/cinematic_camera_2d/icons/virtual_camera_2d.svg")
+
+
 ## A virtual camera works as a logic camera to be used in combination with a
 ## cinematic camera. A VirtualCamera2D can be assigned to a CinematicCamera2D,
 ## all the parameters of the camera will then smoothly transition to the

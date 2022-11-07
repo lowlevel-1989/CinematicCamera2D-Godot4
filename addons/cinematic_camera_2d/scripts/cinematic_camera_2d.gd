@@ -3,6 +3,9 @@ class_name CinematicCamera2D
 extends Camera2D
 
 
+@icon("res://addons/cinematic_camera_2d/icons/cinematic_camera_2d.svg")
+
+
 ## Cinematic camera 2D node.
 ## Uses a CameraData2D to create smooth transitions between cameras.
 

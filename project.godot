@@ -31,9 +31,9 @@ _global_script_classes=[{
 }]
 _global_script_class_icons={
 "AreaTrigger": "",
-"CinematicCamera2D": "",
+"CinematicCamera2D": "res://addons/cinematic_camera_2d/icons/cinematic_camera_2d.svg",
 "TestPlayer": "",
-"VirtualCamera2D": ""
+"VirtualCamera2D": "res://addons/cinematic_camera_2d/icons/virtual_camera_2d.svg"
 }
 
 [application]
