@@ -1,9 +1,9 @@
 @tool
+@icon("res://addons/cinematic_camera_2d/icons/cinematic_camera_2d.svg")
 class_name CinematicCamera2D
 extends Camera2D
 
 
-@icon("res://addons/cinematic_camera_2d/icons/cinematic_camera_2d.svg")
 
 
 ## Cinematic camera 2D node.

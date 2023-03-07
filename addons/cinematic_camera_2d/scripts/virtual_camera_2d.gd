@@ -1,9 +1,7 @@
 @tool
+@icon("res://addons/cinematic_camera_2d/icons/virtual_camera_2d.svg")
 class_name VirtualCamera2D
 extends Node2D
-
-
-@icon("res://addons/cinematic_camera_2d/icons/virtual_camera_2d.svg")
 
 
 ## A virtual camera works as a logic camera to be used in combination with a
@@ -15,7 +13,7 @@ extends Node2D
 ## Path to the node that the camera should follow. If this is set to a Node2D,
 ## the camera will keep the same position as this node. If this is unset,
 ## the camera will keep the same position as the virtual camera.
-@export_node_path(Node2D) var _follow_node: NodePath:
+@export_node_path("Node2D") var _follow_node: NodePath:
 	set(value):
 		_follow_node = value
 		# Allows to see the change without reloading the scene in the editor.
